@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<AssemblyName>WinchModTemplate</AssemblyName>
+		<AssemblyName>StressandTaxes</AssemblyName>
 		<CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
 		<PlatformTarget>x86</PlatformTarget>
 		<TargetFramework>net48</TargetFramework>
@@ -22,7 +22,7 @@
 		<None Include="mod_meta.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-		<None Include="WinchModTemplate.csproj.user" />
+		<None Include="StressandTaxes.csproj.user" />
 	</ItemGroup>
 
 	<ItemGroup>
