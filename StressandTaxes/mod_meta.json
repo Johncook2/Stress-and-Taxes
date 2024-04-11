@@ -1,8 +1,8 @@
 {
-	"Name": "Winch Mod Template",
-	"ModGUID": "YourName.WinchModTemplate",
+	"Name": "Stress and Taxes",
+	"ModGUID": "Johncook.StressandTaxes",
 	"Version": "0.0.1",
-	"ModAssembly": "WinchModTemplate.dll",
+	"ModAssembly": "StressandTaxes.dll",
 	"MinWinchVersion": "0.2.3",
 	"Entrypoint": "WinchModTemplate.Loader/Initialize"
 }
