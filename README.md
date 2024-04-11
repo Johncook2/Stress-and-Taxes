@@ -11,6 +11,9 @@ The purpose of this mod is to focus on the risk/reward part of Dredge. The taxes
  - Nightfishes give more money, everything sells for less and everything costs more.
  - Taxes (Not yet included)
 
+### Purpose
+I started working on this mod before the Pale Reach, then sort of left it alone. I'm hoping if I publish it then I'll work on this more, and potentially get help easier as my code will be visible.
+
 
 
 
