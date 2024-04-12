@@ -11,8 +11,8 @@ on:
           type: boolean
 
 env:
-    PROJ_USERNAME: Johncook2
-    PROJ_NAME: StressandTaxes
+    PROJ_USERNAME: YourName
+    PROJ_NAME: WinchModTemplate
 
 jobs:
     pre_job:
@@ -24,7 +24,7 @@ jobs:
         steps:
             - name: Checkout
               uses: "actions/checkout@v3"
-
+              
             - name: Fetch
               run: git fetch
 
@@ -37,12 +37,13 @@ jobs:
               run: echo "exists=$(git ls-remote --exit-code --tags origin ${{ env.TAG }} >/dev/null 2>&1 && echo true || echo false)" >> $GITHUB_OUTPUT
               env:
                 TAG: "${{fromJson(steps.read-mod_meta.outputs.mod_meta).Version}}"
-
+            
             - name: Output Version Info
               id: out
               run: | 
                 echo "version=${{fromJson(steps.read-mod_meta.outputs.mod_meta).Version}}" >> $GITHUB_OUTPUT
                 echo "exists=${{steps.check-tag.outputs.exists}}" >> $GITHUB_OUTPUT
+
             - name: Error
               if: ${{ steps.out.outputs.exists != 'false' && (!inputs.bypassCheck) }}
               run: echo "::error file=mod_meta.json,title=Refusing to Release::Your mod was not released because there is already a release with the version in mod_meta.json"
@@ -57,7 +58,7 @@ jobs:
 
             - name: Setup .NET
               uses: "actions/setup-dotnet@v3"
-
+              
             - name: Remove .csproj.user
               run: rm ${{ env.PROJ_NAME }}/${{ env.PROJ_NAME }}.csproj.user
 
@@ -79,13 +80,14 @@ jobs:
               with:
                 name: "${{ env.PROJ_USERNAME }}.${{ env.PROJ_NAME }}"
                 path: "${{ env.PROJ_USERNAME }}.${{ env.PROJ_NAME }}"
-
+        
             - name: Zip Asset
               run: |
                 cd ${{ env.PROJ_USERNAME }}.${{ env.PROJ_NAME }}/
                 zip -r ${{ env.PROJ_USERNAME }}.${{ env.PROJ_NAME }}.zip *
                 mv ${{ env.PROJ_USERNAME }}.${{ env.PROJ_NAME }}.zip ..
                 cd ..
+
             - name: Create Release
               uses: "ncipollo/release-action@v1"
               with:
