@@ -11,8 +11,8 @@ on:
           type: boolean
 
 env:
-    PROJ_USERNAME: YourName
-    PROJ_NAME: WinchModTemplate
+    PROJ_USERNAME: Johncook2
+    PROJ_NAME: StressandTaxes
 
 jobs:
     pre_job:
