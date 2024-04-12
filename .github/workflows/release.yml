@@ -24,13 +24,13 @@ jobs:
         steps:
             - name: Checkout
               uses: "actions/checkout@v3"
-              
+
             - name: Fetch
               run: git fetch
 
             - name: Read mod_meta
               id: read-mod_meta
-              run: echo "::set-output name=mod_meta::$(< ./${{ env.PROJ_NAME }}/mod_meta.json)"
+              run: echo "mod_meta=$(< ./${{ env.PROJ_NAME }}/mod_meta.json sed ':a;N;$!ba;s/\n/ /g')" >> $GITHUB_OUTPUT
 
             - name: Check For Release
               id: check-tag
@@ -43,8 +43,6 @@ jobs:
               run: | 
                 echo "version=${{fromJson(steps.read-mod_meta.outputs.mod_meta).Version}}" >> $GITHUB_OUTPUT
                 echo "exists=${{steps.check-tag.outputs.exists}}" >> $GITHUB_OUTPUT
-
-
             - name: Error
               if: ${{ steps.out.outputs.exists != 'false' && (!inputs.bypassCheck) }}
               run: echo "::error file=mod_meta.json,title=Refusing to Release::Your mod was not released because there is already a release with the version in mod_meta.json"
@@ -59,7 +57,7 @@ jobs:
 
             - name: Setup .NET
               uses: "actions/setup-dotnet@v3"
-              
+
             - name: Remove .csproj.user
               run: rm ${{ env.PROJ_NAME }}/${{ env.PROJ_NAME }}.csproj.user
 
@@ -81,14 +79,13 @@ jobs:
               with:
                 name: "${{ env.PROJ_USERNAME }}.${{ env.PROJ_NAME }}"
                 path: "${{ env.PROJ_USERNAME }}.${{ env.PROJ_NAME }}"
-        
+
             - name: Zip Asset
               run: |
                 cd ${{ env.PROJ_USERNAME }}.${{ env.PROJ_NAME }}/
                 zip -r ${{ env.PROJ_USERNAME }}.${{ env.PROJ_NAME }}.zip *
                 mv ${{ env.PROJ_USERNAME }}.${{ env.PROJ_NAME }}.zip ..
                 cd ..
-
             - name: Create Release
               uses: "ncipollo/release-action@v1"
               with:
