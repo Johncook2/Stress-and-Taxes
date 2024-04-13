@@ -1,7 +1,6 @@
-using BepInEx;
 using System;
 using HarmonyLib;
-using HardcoreMod;
+
 
 namespace StressandTaxes.Debt.Patches
 {	
