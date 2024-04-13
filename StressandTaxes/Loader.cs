@@ -10,7 +10,7 @@ namespace StressandTaxes
 		public static void Initialize()
 		{
 			var gameObject = new GameObject(nameof(StressandTaxes));
-			gameObject.AddComponent<StressandTaxes>();
+			gameObject.AddComponent<SnTCore>();
 			GameObject.DontDestroyOnLoad(gameObject);
 		}
 	}
