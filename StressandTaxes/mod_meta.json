@@ -4,5 +4,5 @@
 	"Version": "0.0.1",
 	"ModAssembly": "StressandTaxes.dll",
 	"MinWinchVersion": "0.2.3",
-	"ApplyPatches": true
+	"Entrypoint": "StressandTaxes.Loader/Initialize"
 }
