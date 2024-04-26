@@ -1,6 +1,7 @@
 using System;
 using HarmonyLib;
 using static WorldEventManager;
+using static GameManager;
 
 namespace StressandTaxes.Sanity.Patches
 {
@@ -15,7 +16,7 @@ namespace StressandTaxes.Sanity.Patches
         {
             if (__instance._sanity == 0)
             {
-                WorldEventManager.RollForEvent();
+                GameManager.Instance.WorldEventManager.RollForEvent();
             }
         }
     }
@@ -30,7 +31,7 @@ namespace StressandTaxes.Sanity.Patches
         {
             if (__instance._sanity == 0)
             {
-                WorldEventManager.RollForEvent();
+                GameManager.Instance.WorldEventManager.RollForEvent();
             }
         }
     }
