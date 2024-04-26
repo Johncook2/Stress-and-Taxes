@@ -10,6 +10,7 @@ The purpose of this mod is to focus on the risk/reward part of Dredge. The taxes
  - You can take loans to repair your ship by entering single target repair and selecting something that costs more money than you have saved.
  - Nightfishes give more money, everything sells for less and everything costs more.
  - Taxes (Now included)
+ - Being stressed out for long periods of time is now a bad idea
 
 
 
