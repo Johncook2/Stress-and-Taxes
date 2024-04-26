@@ -12,7 +12,7 @@ namespace StressandTaxes.Debt.Patches
 		[HarmonyPrefix]
 		static void Prefix(DayLabel __instance)
 		{
-			if (GameManager.Instance.Time.Day != __instance.prevDay and __instance.prevDay != -1)
+			if (GameManager.Instance.Time.Day != __instance.prevDay && __instance.prevDay != -1)
 			{
 				GameManager.Instance.GameConfigData.greaterMarrowDebt = GameManager.Instance.GameConfigData.greaterMarrowDebt * (decimal)1.2;
 			}
