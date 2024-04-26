@@ -16,7 +16,6 @@ namespace StressandTaxes.Debt.Patches
 			{
 				GameManager.Instance.GameConfigData.greaterMarrowDebt = GameManager.Instance.GameConfigData.greaterMarrowDebt * (decimal)1.2;
 			}
-;
 		}
 	}
 
