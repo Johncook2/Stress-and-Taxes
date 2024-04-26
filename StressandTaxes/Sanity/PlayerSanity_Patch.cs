@@ -1,6 +1,6 @@
 using System;
 using HarmonyLib;
-using WorldEventManager;
+using static WorldEventManager;
 
 namespace StressandTaxes.Sanity.Patches
 {
