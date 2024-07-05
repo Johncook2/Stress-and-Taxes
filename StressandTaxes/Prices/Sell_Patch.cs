@@ -16,7 +16,7 @@ namespace StressandTaxes.Costs.Patches
 			bool flag = mode != ItemManager.BuySellMode.SELL;
 			if (!flag)
 			{
-				__result *= (decimal) 0.5;
+				__result *= (decimal) 0.75;
 
 				if (itemData.itemSubtype == ItemSubtype.FISH)
 				{
@@ -27,7 +27,7 @@ namespace StressandTaxes.Costs.Patches
 					}
 					if (FishItemData.isAberration)
 					{
-						__result *= 2;
+						__result *= (decimal) 1.5;
 					}
 				}
 

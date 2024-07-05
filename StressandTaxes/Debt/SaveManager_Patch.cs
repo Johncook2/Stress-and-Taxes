@@ -9,7 +9,12 @@ namespace StressandTaxes.Debt.Patches
 	{
 	static void Prefix( ref decimal __state)
 		{
-			__state = GameManager.Instance.SaveData.GreaterMarrowRepayments;
+			if (GameManager.Instance.SaveData.GreaterMarrowRepayments == 50)
+			{
+				GameManager.Instance.SaveData.GreaterMarrowRepayments = 100;
+			}
+
+            __state = GameManager.Instance.SaveData.GreaterMarrowRepayments;
 			GameManager.Instance.SaveData.GreaterMarrowRepayments = GameManager.Instance.GameConfigData.greaterMarrowDebt - __state;
 		}	
 	

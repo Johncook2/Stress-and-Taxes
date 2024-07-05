@@ -14,7 +14,7 @@ namespace StressandTaxes.Debt.Patches
 		{
 			if (GameManager.Instance.Time.Day != __instance.prevDay && __instance.prevDay != -1)
 			{
-				GameManager.Instance.GameConfigData.greaterMarrowDebt = GameManager.Instance.GameConfigData.greaterMarrowDebt * (decimal)1.2;
+				GameManager.Instance.GameConfigData.greaterMarrowDebt = GameManager.Instance.GameConfigData.greaterMarrowDebt * (decimal)1.3;
 			}
 		}
 	}
