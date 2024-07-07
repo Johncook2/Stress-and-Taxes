@@ -1,7 +1,7 @@
 {
 	"Name": "Stress and Taxes",
 	"ModGUID": "Johncook.StressandTaxes",
-	"Version": "0.1.1",
+	"Version": "0.1.2",
 	"ModAssembly": "StressandTaxes.dll",
 	"MinWinchVersion": "0.2.3",
 	"Entrypoint": "StressandTaxes.Loader/Initialize"
