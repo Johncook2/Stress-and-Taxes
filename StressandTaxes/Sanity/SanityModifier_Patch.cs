@@ -9,7 +9,7 @@ namespace StressandTaxes.Sanity.Patches
     public static class SanityModifierDetector_GetTotalModifierValue_Patch
     {
         [HarmonyPrefix]
-        static void Postfix(ref decimal __result)
+        static void Postfix(ref float __result)
         {
              __result *=  1;
         }

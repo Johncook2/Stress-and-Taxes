@@ -17,7 +17,7 @@ namespace StressandTaxes.Costs.Patches
     public static class GameConfigData_SanityModifier_Patch
     {
         [HarmonyPostfix]
-        static void NightSanityModifier(ref decimal __result)
+        static void NightSanityModifier(ref float __result)
         {
             __result *= 2;
         }
