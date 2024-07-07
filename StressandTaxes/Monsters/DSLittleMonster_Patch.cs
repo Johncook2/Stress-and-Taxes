@@ -1,4 +1,4 @@
-using System;
+using Winch.Core;
 using HarmonyLib;
 
 namespace StressandTaxes.Monsters.Patches
@@ -30,7 +30,7 @@ namespace StressandTaxes.Monsters.Patches
 			__state = __instance.speed;
 			__instance.speed *= (float)1.75 - (GameManager.Instance.Player.Sanity.CurrentSanity);
 			float sanity = GameManager.Instance.Player.Sanity.CurrentSanity;
-			FileLog.Log(sanity.ToString());
+			WinchCore.Log.Info("sanity: " + sanity.ToString());
 			
 		}
 
