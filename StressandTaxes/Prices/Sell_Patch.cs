@@ -3,11 +3,9 @@ using HarmonyLib;
 	
 namespace StressandTaxes.Costs.Patches
 {
-	// Token: 0x02000004 RID: 4
 	[HarmonyPatch(typeof(ItemManager), "GetItemValue")]
 	public static class ItemManager_Patch
 	{
-		// Token: 0x06000007 RID: 7 RVA: 0x00002C74 File Offset: 0x00000E74
 		[HarmonyPostfix]
 		public static void GetItemValue(ref decimal __result, SpatialItemInstance itemInstance, ItemManager.BuySellMode mode, float sellValueModifier = 0.5f)
 		{
